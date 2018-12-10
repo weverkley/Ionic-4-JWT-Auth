@@ -1,0 +1,7 @@
+{
+  "name": "SiitRestaurante",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

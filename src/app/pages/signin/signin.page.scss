@@ -1,0 +1,37 @@
+:host {
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  ion-content {
+    --background: rgb(98, 98, 98);
+    --background: linear-gradient(180deg, rgba(98, 98, 98, 1) 0%, rgba(79, 78, 78, 1) 26%, rgba(24, 34, 42, 1) 100%);
+  }
+  .splash-info {
+    position: relative;
+    z-index: 2;
+    margin-top: -64px;
+    text-align: center;
+    margin-top: 8vh;
+  }
+  .splash-info img {
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+  .splash-intro {
+    padding-top: 20px;
+    font-size: 18px;
+    max-width: 80%;
+    margin: auto;
+    color: #fff;
+  }
+  ion-item span {
+    font-size: 0.8em;
+    color: #777777;
+  }
+  .invalid {
+    border-bottom: 2px solid #ea6153;
+  }
+}

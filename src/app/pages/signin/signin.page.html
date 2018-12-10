@@ -1,0 +1,47 @@
+<ion-content>
+  <ion-grid style="margin-top: 12%;">
+    <ion-row>
+      <ion-col size-sm="8" size-md="6" size-lg="4" size-xl="4" offset-sm="2" offset-md="3" offset-lg="4" offset-xl="4">
+        <ion-card color="dark">
+          <ion-card-header>
+            <div class="splash-info">
+              <img src="assets/img/logo.png" width="128" alt="Siit">
+              <div class="splash-intro">
+                <p>Login</p>
+              </div>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <form [formGroup]="form" (submit)="doLogin()" (keyup.enter)="doLogin()" padding>
+              <ion-list>
+                <ion-item [class.invalid]="form.get('codigo').hasError('required') && form.get('codigo').touched">
+                  <ion-label>Usuário</ion-label>
+                  <ion-select formControlName="codigo" interface="alert" ok-text="Ok" cancel-text="Fechar">
+                    <ion-select-option *ngFor="let usuario of usuarios" [value]="usuario.codigo">{{usuario.nome}}</ion-select-option>
+                  </ion-select>
+                </ion-item>
+                <!-- <ion-item [class.invalid]="form.get('nome').hasError('required') && form.get('nome').touched">
+                  <ion-input type="text" formControlName="nome" placeholder="Nome"></ion-input>
+                </ion-item> -->
+                <ion-item class="error" *ngIf="form.get('codigo').hasError('required') && form.get('codigo').touched">
+                  <span *ngIf="form.get('codigo').hasError('required') && form.get('codigo').touched">Selecione um usuário.</span>
+                </ion-item>
+                <ion-item [class.invalid]="form.get('senha').hasError('required') && form.get('senha').touched">
+                  <ion-label>Senha</ion-label>
+                  <ion-input type="password" formControlName="senha"></ion-input>
+                </ion-item>
+                <ion-item class="error" *ngIf="form.get('senha').hasError('required') && form.get('senha').touched">
+                  <span>Preencha este campo.</span>
+                </ion-item>
+              </ion-list>
+              <br>
+              <div text-center>
+                <ion-button type="submit" shape="round" color="primary" expand="full" [disabled]="!form.valid">ENTRAR</ion-button>
+              </div>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
